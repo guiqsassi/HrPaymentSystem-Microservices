@@ -1,0 +1,44 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-EurekaServerApplication<EurekaServer>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "microservices.eurekaserver.EurekaServerApplication",
+            "projectName": "EurekaServer",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-PaymentApplication<Payment>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "microservices.payment.PaymentApplication",
+            "projectName": "Payment",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-UserApiApplication<UserApi>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "microservices.userapi.UserApiApplication",
+            "projectName": "UserApi",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ApiGatewayApplication<api-gateway>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "microservices.api_gateway.ApiGatewayApplication",
+            "projectName": "api-gateway",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+services:
+  api-gateway:
+    build: ./api-gateway
+    ports: 
+    - 8765:8765
+    expose:
+      - 8765
+    networks:
+      - hr_system
+    environment:
+      - EUREKA_URL=http://eureka-server:8761/eureka
+  eureka-server:
+    hostname: eureka-server
+    build: ./EurekaServer
+    ports: 
+      - 8761:8761
+    expose:
+      - 8761
+    networks:
+      - hr_system
+  payment:
+    build: ./Payment
+    ports: 
+      - 8102:8102
+    expose:
+      - 8102
+    environment:
+      - PORT=8102
+      - EUREKA_URL=http://eureka-server:8761/eureka
+    networks:
+      - hr_system
+  mysql-db:
+    image: mysql
+    hostname: mysql-db
+    ports:
+      - 3305:3306 
+    expose:
+      - 3305
+    environment:
+      - MYSQL_DATABASE=microServicesUser
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=0123
+      - MYSQL_ROOT_PASSWORD=0123
+    networks:
+      - hr_system
+  user-api:
+    build: ./UserApi
+    depends_on: 
+    - mysql-db
+    restart: always
+    ports: 
+      - 8001:8001
+    expose:
+      - 8001
+    environment:
+      - PORT=8001
+      - MYSQL_URL=jdbc:mysql://mysql-db:3306/microServicesUser
+      - MYSQL_USERNAME=admin
+      - MYSQL_PASSWORD=0123
+      - EUREKA_URL=http://eureka-server:8761/eureka
+    networks:
+      - hr_system
+networks:
+  hr_system:
+    driver: bridge
+    
