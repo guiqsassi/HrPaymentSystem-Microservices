@@ -6,14 +6,12 @@
 <br />
 <div align="center">
 
-  <img src="pawHand/src/assets/Logo.png" height="80"/>
   <h3 align="center">Hr payment Microservices</h3>
 
   <p align="center">
     Um projeto feito para realizar pagamentos de funcionários
     <br />
     <br />
-    <a href="https://media.discordapp.net/attachments/857222932363608067/1258433283738570855/image.png?ex=668806d3&is=6686b553&hm=f56e4f8b6c1eece443c1e857f279aab78bc1e2bde4ea342cd4dbcc7ca8016209&=&format=webp&quality=lossless&width=550&height=276">Ver demonstração!</a>
   </p>
 </div>
 
